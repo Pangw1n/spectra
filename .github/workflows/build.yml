@@ -16,4 +16,4 @@ jobs:
 
       - name: 'Build Docker image'
         run: |
-          docker build -t spectra:latest .'
+          docker build -t spectra:latest .
