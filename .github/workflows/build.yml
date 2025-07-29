@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-
-
 jobs:  
   build:
     runs-on: ubuntu-latest
@@ -24,7 +22,8 @@ jobs:
       - name: 'Build Docker image'
         env:
           DOCKER_REGISTRY: 'pangw1n/spectra'
-          IMAGE_TAG: ${{ github.sha }}
+          # IMAGE_TAG: ${{ github.sha }}
+          IMAGE_TAG: 'latest'
         run: |
           docker build -t ${DOCKER_REGISTRY}:${IMAGE_TAG} .
           docker push ${DOCKER_REGISTRY}:${IMAGE_TAG}
