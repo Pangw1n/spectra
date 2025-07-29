@@ -67,6 +67,15 @@ try:
             continue
         else:
             continue
+
+    if combine_graphs:
+        plt.ylabel("Transmittance[%]")
+        plt.xlabel("Wavelength[nm]")
+        plt.ylim(0,110)
+        plt.title("Transmittance spectrum")
+        plt.legend()
+        plt.savefig(os.path.join(output, "graph.png"))
+
 except FileNotFoundError as e:
     print(f"Error: File not found - {filename}")
     sys.exit()
@@ -79,15 +88,8 @@ except Exception as e:
     print(repr(e))
     sys.exit()
 
-if combine_graphs:
-    plt.ylabel("Transmittance[%]")
-    plt.xlabel("Wavelength[nm]")
-    plt.ylim(0,110)
-    plt.title("Transmittance spectrum")
-    plt.legend()
-    plt.savefig(os.path.join(output, "graph.png"))
-
 summary.to_csv(os.path.join(output, "summary.csv"))
+print(f"Saved to {output}")
 
 
 '''
