@@ -13,5 +13,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Default command (can be overridden in `docker run`)
-CMD ["python", "main.py", "--input=/input", "--output=/output", "--combine_graphs"]
+CMD ["python", "main.py", "--input=/input", "--output=/output"]
 
