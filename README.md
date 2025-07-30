@@ -8,6 +8,9 @@
 - Combine multiple datasets into a single graph for comparison.
 - Simple command-line usage via Docker for portability and ease of setup.
 
+## Requirements
+Docker is required to use Spectra. You can install Docker by following the instructions at [https://docs.docker.com/get-docker/](https://docs.docker.com/get-docker/).
+
 ## Usage
 
 Spectra is distributed as a Docker container. You only need Docker installed, no Python environment setup required.
