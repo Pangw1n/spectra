@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.11-slim
 
 # Set the working directory
 WORKDIR /app
@@ -12,6 +12,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of the application code into the container
 COPY . .
 
+ENTRYPOINT ["python", "main.py"]
+
 # Default command (can be overridden in `docker run`)
-CMD ["python", "main.py", "--input=/input", "--output=/output"]
+#CMD ["--input=/input", "--output=/output"]
 
